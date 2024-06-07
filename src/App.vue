@@ -123,12 +123,25 @@ const download = () => {
     }).then((canvas: any) => {
         // 生成的ba64图片
         const base64Data = canvas.toDataURL('image/png', 1);
+        let src = base64ToBlob(base64Data)
+        let url =  URL.createObjectURL(src)
         const a: any = document.createElement('a');
-        a.href = base64Data;
+        a.href = url;
         a.download = new Date().getTime();
         a.click();
-        window.URL.revokeObjectURL(base64Data);
+        window.URL.revokeObjectURL(url);
     });
+}
+const base64ToBlob= (code:any)=> {
+  let parts = code.split(';base64,');
+  let contentType = parts[0].split(':')[1];
+  let raw = window.atob(parts[1]);
+  let rawLength = raw.length;
+  let uInt8Array = new Uint8Array(rawLength);
+  for (let i = 0; i < rawLength; ++i) {
+    uInt8Array[i] = raw.charCodeAt(i);
+  }
+  return new window.Blob([uInt8Array], {type: contentType});
 }
 </script>
 
