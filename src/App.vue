@@ -37,27 +37,27 @@
                         <div class="mr-4 text-[#666] font-bold text-base">:</div> -->
                         <div class="font-bold text-xl">{{ data.doctorName }}</div>
                     </div>
-                    <div class="flex justify-start items-center  h-8 mt-1">
+                    <div class="flex justify-start items-center  h-8 mt-2">
                         <!-- <div class="w-24 text-[#666] font-bold text-base" style="text-align-last: justify;">患者姓名</div>
                         <div class="mr-4 text-[#666] font-bold text-base">:</div> -->
                         <div class="font-bold text-xl">{{ data.patientName }}</div>
                     </div>
-                    <div class="flex justify-start items-center  h-8 mt-1">
+                    <div class="flex justify-start items-center  h-8 mt-2">
                         <!-- <div class="w-24 text-[#666] font-bold text-base" style="text-align-last: justify;">牙位</div>
                         <div class="mr-4 text-[#666] font-bold text-base">:</div> -->
                         <div class="font-bold text-xl">{{ data.dentalPosition }}</div>
                     </div>
-                    <div class="flex justify-start items-center  h-8 mt-1">
+                    <div class="flex justify-start items-center  h-8 mt-2">
                         <!-- <div class="w-24 text-[#666] font-bold text-base" style="text-align-last: justify;">修复体名称</div>
                         <div class="mr-4 text-[#666] font-bold text-base">:</div> -->
                         <div class="font-bold text-xl">{{ data.repairBody }}</div>
                     </div>
-                    <div class="flex justify-start items-center  h-8 mt-1">
+                    <div class="flex justify-start items-center  h-8 mt-2">
                         <!-- <div class="w-24 text-[#666] font-bold text-base" style="text-align-last: justify;">质保期</div>
                         <div class="mr-4 text-[#666] font-bold text-base">:</div> -->
                         <div class="font-bold text-xl">{{ data.warrantyPeriod }}</div>
                     </div>
-                    <div class="flex justify-start items-center  h-8 mt-0">
+                    <div class="flex justify-start items-center  h-8 mt-1">
                         <!-- <div class="w-24 text-[#666] font-bold text-base" style="text-align-last: justify;">发卡日期</div>
                         <div class="mr-4 text-[#666] font-bold text-base">:</div> -->
                         <div class="font-bold text-xl">{{ data.date }}</div>
