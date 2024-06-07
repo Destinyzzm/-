@@ -122,7 +122,7 @@ const download = () => {
         backgroundColor: '#fff',
     }).then((canvas: any) => {
         // 生成的ba64图片
-        const base64Data = canvas.toDataURL('image/jpeg', 1);
+        const base64Data = canvas.toDataURL('image/png', 1);
         const a: any = document.createElement('a');
         a.href = base64Data;
         a.download = new Date().getTime();
