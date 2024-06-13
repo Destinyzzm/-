@@ -1,19 +1,11 @@
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
-  <img class="w-20" src="https://yuguwechat.oss-cn-shanghai.aliyuncs.com/GUWEN/my_data_bg.png" alt="">
+
+  <!-- <img class="w-20" src="https://yuguwechat.oss-cn-shanghai.aliyuncs.com/GUWEN/my_data_bg.png" alt=""> -->
   <div class="w-20 h-20 bg-black" @click="downLoad"></div>
   <div class="content" id="test">
     <div class="font-bold text-2xl text-center">标题</div>
     <div class="text-base">设计费第三课旷达科技发动机开发都说了会计法电力科技翻到了翻到了发呆放大了发呆设计费第三课旷达科技发动机开发都说了会计法电力科技翻到了翻到了发呆放大了发呆设计费第三课旷达科技发动机开发都说了会计法电力科技翻到了翻到了发呆放大了发呆设计费第三课旷达科技发动机开发都说了会计法电力科技翻到了翻到了发呆放大了发呆设计费第三课旷达科技发动机开发都说了会计法电力科技翻到了翻到了发呆放大了发呆设计费第三课旷达科技发动机开发都说了会计法电力科技翻到了翻到了发呆放大了发呆设计费第三课旷达科技发动机开发都说了会计法电力科技翻到了翻到了发呆放大了发呆设计费第三课旷达科技发动机开发都说了会计法电力科技翻到了翻到了发呆放大了发呆设计费第三课旷达科技发动机开发都说了会计法电力科技翻到了翻到了发呆放大了发呆设计费第三课旷达科技发动机开发都说了会计法电力科技翻到了翻到了发呆放大了发呆设计费第三课旷达科技发动机开发都说了会计法电力科技翻到了翻到了发呆放大了发呆设计费第三课旷达科技发动机开发都说了会计法电力科技翻到了翻到了发呆放大了发呆设计费第三课旷达科技发动机开发都说了会计法电力科技翻到了翻到了发呆放大了发呆设计费第三课旷达科技发动机开发都说了会计法电力科技翻到了翻到了发呆放大了发呆设计费第三课旷达科技发动机开发都说了会计法电力科技翻到了翻到了发呆放大了发呆设计费第三课旷达科技发动机开发都说了会计法电力科技翻到了翻到了发呆放大了发呆设计费第三课旷达科技发动机开发都说了会计法电力科技翻到了翻到了发呆放大了发呆设计费第三课旷达科技发动机开发都说了会计法电力科技翻到了翻到了发呆放大了发呆设计费第三课旷达科技发动机开发都说了会计法电力科技翻到了翻到了发呆放大了发呆设计费第三课旷达科技发动机开发都说了会计法电力科技翻到了翻到了发呆放大了发呆设计费第三课旷达科技发动机开发都说了会计法电力科技翻到了翻到了发呆放大了发呆设计费第三课旷达科技发动机开发都说了会计法电力科技翻到了翻到了发呆放大了发呆设计费第三课旷达科技发动机开发都说了会计法电力科技翻到了翻到了发呆放大了发呆设计费第三课旷达科技发动机开发都说了会计法电力科技翻到了翻到了发呆放大了发呆设计费第三课旷达科技发动机开发都说了会计法电力科技翻到了翻到了发呆放大了发呆</div>
-    <div class="grid grid-cols-2 gap-0 bg-danger">
+    <div class="grid grid-cols-3 gap-0 bg-danger">
       <div class="pt-[100%] relative" v-for="(item,index) in imgList1" :key="index">
         <img class="w-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" width="100" height="100" :src="item" alt="">
       </div>
@@ -22,7 +14,6 @@
 </template>
 <script setup lang="ts">
 import { onMounted ,ref} from 'vue';
-import HelloWorld from './components/HelloWorld.vue'
 // import exportWord from 'html-doc-js'
 import exportWord from 'js-export-word'
 
@@ -47,15 +38,16 @@ const downLoad = ()=>{
   // exportWord(wrap,config) 
 
 
-const wrap = document.getElementById('test')
-const config = {
-      addStyle:true, // 是否导出样式，默认为true，此操作会将所有样式转换成行内样式导出
-      fileName:'测试文件', // 导出文件名
-      toImg:['.need-to-img','.bg-danger'], // 页面哪些部分需要转化成图片，例如echart图表之类
-      success(){} // 完成之后回调，一般页面篇幅比较大，时间比较长
+  const wrap = document.getElementById('test')
+  const config = {
+        addStyle:true, // 是否导出样式，默认为true，此操作会将所有样式转换成行内样式导出
+        fileName:'测试文件', // 导出文件名
+        toImg:['.bg-danger'], // 页面哪些部分需要转化成图片，例如echart图表之类
+        success(){} // 完成之后回调，一般页面篇幅比较大，时间比较长
+  }
+  exportWord(wrap,config)  
 }
-exportWord(wrap,config)  
-}
+// 导出前将图片转成网络图片
 const getBase64Image= (src:string) =>{
   return new Promise(resolve => {
         const img = new Image()
@@ -78,6 +70,25 @@ onMounted(()=>{
     imgList1.value.push(await getBase64Image(item))
   })
 })
+
+
+// import LegendaryCursor from "legendary-cursor";
+
+// window.addEventListener("load", () => {
+
+//     LegendaryCursor.init({
+//         lineSize:         0.15,
+//         opacityDecrement: 0.55,
+//         speedExpFactor:   0.8,
+//         lineExpFactor:    0.6,
+//         sparklesCount:    65,
+//         maxOpacity:      0.99,  // should be a number between [0 ... 1]
+//         // texture1:         "http://path_to_texture",      // texture displayed on mouse hover
+//         // texture2:         "http://path_to_texture",      // texture displayed on mouse click
+//         // texture3:         "http://path_to_texture",      // texture displayed on sparkles
+//     });
+
+// });
 </script>
 
 <style scoped>

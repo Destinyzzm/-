@@ -23,7 +23,7 @@
             </div>
             <div class="flex justify-start items-center mb-4">
                 <div class="w-24 mr-4" style="text-align-last: justify;">发卡日期</div>
-                <el-date-picker style="width: 160px;" v-model="data.date" type="date" placeholder="请选择发卡日期"
+                <el-date-picker style="width: 160px;" :editable="false"  v-model="data.date" type="date" placeholder="请选择发卡日期"
                     size="default" value-format="YYYY年MM月DD日" format="YYYY-MM-DD" />
             </div>
         </div>
